@@ -39,7 +39,7 @@
         tiles.addTo(mymap);
 
         const api_url = "https://api.wheretheiss.at/v1/satellites/25544"
-        let firestTime = true;
+        let firstTime = true;
         async function getISS() {
             const response = await fetch(api_url);
             const data = await response.json();
@@ -48,7 +48,7 @@
             // L.marker([latitude , longitude]).addTo(mymap)
 
             marker.setLatLng([latitude , longitude]);
-            if(firstTIme){
+            if(firstTime){
             mymap.setView([latitude , longitude] , 2);
                 firstTime = false;
             }
